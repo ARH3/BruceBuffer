@@ -728,6 +728,6 @@ bot.on('rem_dj', function (data) {
 //__CLOSING SERVER STUFF___________________________________________________________ */
   // close the response
   res.end();
-}).listen(8888); // the server will listen on port 8888
+}).listen(process.env.PORT || 8888); // the server will listen on "process.env.PORT" if it exists (Heroku!), or port 8888 as a default fallback
 
 console.log("END - Listening on http://127.0.0.1:8888");
