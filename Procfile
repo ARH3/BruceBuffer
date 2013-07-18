@@ -1,1 +1,1 @@
-worker: node BruceBuffer.js
+web: node BruceBuffer.js
