@@ -42,6 +42,32 @@ var bot = new Bot(AUTH, USERID, ROOMID);
 
    console.log('Things are working at checkpoint C.');
 
+
+/***************************************************************************
+* STAY AWAKE ON HEROKU!! 
+* This section pings itself every 10 minutes to keep Bruce alive
+* The reason for this is because on Heroku's free tier, the app goes to sleep after 1hr of no activity on the site
+*
+*/
+
+var minutes = 5, the_interval = minutes * 60 * 1000;
+
+setInterval(function() {
+  console.log("I am doing my check");
+
+  var options = {
+      host: 'bruce-buffer.herokuapp.com'
+  };
+
+  http.get(options, function (http_res) {
+      http_res.on("end", function () {
+          console.log("Sent http request to bruce-buffer.herokuapp.com to stay awake.");
+      });
+  });
+
+}, 1000);
+
+
 /***************************************************************************
 * SPEAK 
 * This section listens for when people say things, and responds accordingly
