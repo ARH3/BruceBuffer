@@ -13,17 +13,12 @@ http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
 
    //QA - Checkpoint A
-   res.write('<h1>Things seem to be working for Bruce.</h1>');
-
-//__CLOSING SERVER STUFF___________________________________________________________ */
-  // close the response
-  res.end();
-}).listen(process.env.PORT || 8888); // the server will listen on "process.env.PORT" if it exists (Heroku!), or port 8888 as a default fallback
+   res.write('<h1>Things are working at checkpoint A.</h1>');
 
 
 //___START BOT STUFF__________________________________________________________
 var Bot    = require('./index');
-console.log('Things are working at checkpoint B.');
+   res.write('<h1>Things are working at checkpoint B.</h1>');
 var AUTH   = 'vzYqJzImNcvheHERMcsJuJCS'; // Bruce Buffer
 var USERID = '502196a3eb35c174e3000023'; // Bruce Buffer
 var ROOMID = '4f9ac260eb35c15fcc0001e1'; // Grotto
@@ -40,7 +35,7 @@ var ROOMID = '4f9ac260eb35c15fcc0001e1'; // Grotto
 
 var bot = new Bot(AUTH, USERID, ROOMID);
 
-   console.log('Things are working at checkpoint C.');
+   res.write('<h1>Things are working at checkpoint C.</h1>');
 
 /***************************************************************************
 * SPEAK 
@@ -193,7 +188,7 @@ bot.on('speak', function (data) {
    }
 });
 
-   console.log('Things are working at checkpoint D.');
+   res.write('<h1>Things are working at checkpoint D.</h1>');
 /***************************************************************************
 * BONUS POINT - "YEEHAW" TEXT BASED
 *This section gives the DJ a bonus point if 50% of people say any phrase that includes "yeehaw"
@@ -285,7 +280,7 @@ bot.on('update_votes', function (data) {
     }); //getHeadCount
 });//bot.on('update_votes')
 
-   console.log('Things are working at checkpoint E.');
+   res.write('<h1>Things are working at checkpoint E.</h1>');
 
 
 /***************************************************************************
@@ -359,7 +354,7 @@ bot.on('pmmed', function (data) {
 
 });
 
-   console.log('Things are working at checkpoint F.');
+   res.write('<h1>Things are working at checkpoint F.</h1>');
 
 /***************************************************************************
 * BLACKLIST
@@ -725,6 +720,14 @@ bot.on('rem_dj', function (data) {
         });
     }
 
-   console.log('Things are working at checkpoint G.');
+
+
+
+
+   res.write('<h1>Things are working at checkpoint G.</h1>');
+//__CLOSING SERVER STUFF___________________________________________________________ */
+  // close the response
+  res.end();
+}).listen(process.env.PORT || 8888); // the server will listen on "process.env.PORT" if it exists (Heroku!), or port 8888 as a default fallback
 
 console.log("END - Listening on http://127.0.0.1:8888");
