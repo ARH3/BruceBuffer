@@ -60,9 +60,7 @@ setInterval(function() {
   };
 
   http.get(options, function (http_res) {
-      http_res.on("end", function () {
-          console.log("Sent http request to bruce-buffer.herokuapp.com to stay awake.");
-      });
+      console.log("Sent http request to bruce-buffer.herokuapp.com to stay awake.");
   });
 
 }, the_interval);
