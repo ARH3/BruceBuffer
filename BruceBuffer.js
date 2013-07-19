@@ -50,7 +50,7 @@ var bot = new Bot(AUTH, USERID, ROOMID);
 *
 */
 
-var minutes = 5, the_interval = minutes * 60 * 1000;
+var minutes = 20, the_interval = minutes * 60 * 1000;
 
 setInterval(function() {
   console.log("I am doing my check");
@@ -65,7 +65,7 @@ setInterval(function() {
       });
   });
 
-}, 1000);
+}, the_interval);
 
 
 /***************************************************************************
